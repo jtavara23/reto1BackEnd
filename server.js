@@ -1,6 +1,30 @@
 'use strict'
 //VARIABLES
+var titulo = "Josue y sus amigos"
 
+var persona = {
+	nombres: "Josue Gaston",
+	apellidos: "Tavara Idrogo",
+	edad: "21",
+}
+
+var amigos = [
+	{
+		nombres: "Carlos",
+		apellidos: "Plasencia Prado",
+		edad: "23",
+	},
+	{
+		nombres: "Jeffri",
+		apellidos: "Murrugarra LLerena",
+		edad: "20",
+	},
+	{
+		nombres: "Luis Carlos",
+		apellidos: "Canso Díaz",
+		edad: "24",
+	},
+]
 
 
 
@@ -23,7 +47,7 @@ swig.setDefaults({cache: false});
 
 // Cuando exista una petición en el servidor  
 server.get('/',function(req,res){
-	res.render('pagina.html');
+	res.render('template.html', {title:titulo, person: persona, friends:amigos});
 });
 
 // INICIAR SERVIDOR
