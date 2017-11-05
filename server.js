@@ -1,19 +1,29 @@
 'use strict'
+//VARIABLES
+
+
+
 
 // REQUERIMIENTO DE MODULOS
 
 var express =  require('express');
-
+var swig = require('swig');
 //CONFIGURACIONES
 
 // Creación del servidor web con express
 var server = express();
 
+// Integracion del motor de templates swig
+server.engine('html',swig.renderFile);
+server.set('view engine', 'html');
+server.set('views', __dirname + '/views');
+swig.setDefaults({cache: false});
+
 // PETICIONES
 
 // Cuando exista una petición en el servidor  
 server.get('/',function(req,res){
-	res.send('Hola mundo');
+	res.render('pagina.html');
 });
 
 // INICIAR SERVIDOR
