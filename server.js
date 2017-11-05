@@ -20,5 +20,5 @@ server.get('/',function(req,res){
 
 // Se corre el servidor en el puerto 8000
 server.listen(8000, function() {
-	console.log('El servidor esta escuchando en el puerto '+ 8000)
+	console.log('Servidor esta escuchando en el puerto '+ 8000)
 });
